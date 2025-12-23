@@ -1,4 +1,5 @@
 import axios from "axios"
+import { defineStore } from 'pinia'
 
 export const useTagsStore = defineStore('tagsStore', {
   state: () => ({
