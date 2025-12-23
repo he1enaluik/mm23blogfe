@@ -9,7 +9,7 @@ export const useTagsStore = defineStore('tagsStore', {
   }),
   actions: {
     async getTags(page: number = 1) {
-      const res = await axios.get('http://localhost:8000/api/tags', {
+      const res = await axios.get('/api/tags', {
         params: { page },
       });
       this.pagination = res.data;
@@ -19,14 +19,14 @@ export const useTagsStore = defineStore('tagsStore', {
       if (this.tags.length) {
         this.tag = this.tags.find((tag: any) => tag.slug === slug);
       } else {
-        const res = await axios.get(`http://localhost:8000/api/tag/${slug}`);
+        const res = await axios.get(`/api/tag/${slug}`);
         this.tag = res.data;
       }
     },
     async createTag(payload: any) {
       this.errors = null;
       try {
-        const res = await axios.post('http://localhost:8000/api/tags', payload);
+        const res = await axios.post('/api/tags', payload);
         this.tag = res.data;
       } catch (err: any) {
         this.errors = err?.response?.data?.errors;
@@ -35,14 +35,14 @@ export const useTagsStore = defineStore('tagsStore', {
     async updateTag(slug: string, payload: any) {
       this.errors = null;
       try {
-        const res = await axios.put(`http://localhost:8000/api/tag/${slug}`, payload);
+        const res = await axios.put(`/api/tag/${slug}`, payload);
         this.tag = res.data;
       } catch (err: any) {
         this.errors = err?.response?.data?.errors;
       }
     },
     async deleteTag(slug: string) {
-      await axios.delete(`http://localhost:8000/api/tag/${slug}`);
+      await axios.delete(`/api/tag/${slug}`);
       this.tags = this.tags.filter((tag: any) => tag.slug !== slug);
     },
   },

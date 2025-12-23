@@ -1,4 +1,5 @@
 import axios from "axios"
+import { defineStore } from 'pinia'
 export const usePostsStore = defineStore('postsStore', {
   state: () => ({
     pagination: null,
@@ -7,7 +8,7 @@ export const usePostsStore = defineStore('postsStore', {
   }),
   actions: {
     async getPosts(page: Number) {
-        let res = await axios.get('http://127.0.0.1:8000/api/posts', {
+        let res = await axios.get('/api/posts', {
             params: {
                 page
             }
@@ -19,7 +20,7 @@ export const usePostsStore = defineStore('postsStore', {
         if(this.posts.length) {
             this.post = this.posts.filter((post:any) => post.slug === slug)[0] as any;
         } else {
-            let res = await axios.get('http://localhost:8000/api/post/' + slug);
+            let res = await axios.get('/api/post/' + slug);
             this.post = res.data;
         }
     }

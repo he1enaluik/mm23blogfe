@@ -1,0 +1,51 @@
+export const posts = [
+  {
+    id: 1,
+    title: 'Welcome to the blog',
+    slug: 'welcome-to-the-blog',
+    body: 'This is a demo post served from the Nuxt server API.',
+    created_at: '2025-01-01',
+    updated_at: '2025-01-02',
+  },
+  {
+    id: 2,
+    title: 'Building with Nuxt',
+    slug: 'building-with-nuxt',
+    body: 'Nuxt 4 provides a great DX with server routes and auto imports.',
+    created_at: '2025-01-05',
+    updated_at: '2025-01-06',
+  },
+  {
+    id: 3,
+    title: 'Using Nuxt UI',
+    slug: 'using-nuxt-ui',
+    body: 'Nuxt UI offers headless components to compose your UI quickly.',
+    created_at: '2025-01-10',
+    updated_at: '2025-01-10',
+  },
+  {
+    id: 4,
+    title: 'Static data example',
+    slug: 'static-data-example',
+    body: 'These posts are static JSON to unblock development.',
+    created_at: '2025-01-12',
+    updated_at: '2025-01-13',
+  },
+  {
+    id: 5,
+    title: 'API routes in Nuxt',
+    slug: 'api-routes-in-nuxt',
+    body: 'Server routes live under server/api and return JSON by default.',
+    created_at: '2025-01-14',
+    updated_at: '2025-01-14',
+  },
+  {
+    id: 6,
+    title: 'Pagination sample',
+    slug: 'pagination-sample',
+    body: 'Demonstrating simple pagination logic with in-memory data.',
+    created_at: '2025-01-15',
+    updated_at: '2025-01-15',
+  },
+];
+

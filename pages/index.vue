@@ -13,7 +13,7 @@
     let page = ref(parseInt(route.query.page ?? 1) );
     
     async function getPosts(page) {
-        let res = await axios.get('http://127.0.0.1:8000/api/posts', {
+        let res = await axios.get('/api/posts', {
             params: {
                 page
             }
